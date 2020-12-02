@@ -165,6 +165,11 @@ GROUP BY c.company_name
   </details>
 
 ```SQL
+SELECT c.contact_name, COUNT(o.customer_id)
+FROM customers c LEFT JOIN orders o
+ON o.customer_id = c.customer_id
+GROUP BY c.contact_name
+ORDER BY COUNT DESC
 
 ```
 
@@ -176,7 +181,10 @@ GROUP BY c.company_name
   </details>
 
 ```SQL
-
+SELECT c.city, COUNT(o.customer_id)
+FROM customers c LEFT JOIN orders o
+ON o.customer_id = c.customer_id
+GROUP BY c.city
 ```
 
 ## Data Normalization
@@ -196,53 +204,57 @@ Below are some empty tables to be used to normalize the database
 * Not all of the cells will contain data in the final solution
 * Feel free to edit these tables as necessary
 
-Table Name:
+Table Name: Person Table
 
-|            |            |            |            |            |            |            |            |            |
+| Person ID  |    Name    | Fenced Yard|City Dweller|            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+|     1      |    Jane    |    No      |    Yes     |            |            |            |            |            |
+|     2      |     Bob    |    No      |     No     |            |            |            |            |            |
+|     3      |     Sam    |    Yes     |     No     |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 
-Table Name:
+Table Name: Person Pet Table
 
-|            |            |            |            |            |            |            |            |            |
+| Person Id  |    Pet Id  |            |            |            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+|     1      |     1      |            |            |            |            |            |            |            |
+|     1      |     4      |            |            |            |            |            |            |            |
+|     1      |     6      |            |            |            |            |            |            |            |
+|     2      |     2      |            |            |            |            |            |            |            |
+|     3      |     3      |            |            |            |            |            |            |            |
+|     3      |     5      |            |            |            |            |            |            |            |
+|     3      |     7      |            |            |            |            |            |            |            |
 
-Table Name:
+Table Name: Pet Table
 
-|            |            |            |            |            |            |            |            |            |
+|   Pet Id   |  Pet Name  |  Pet Type  |            |            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+|      1     |  Ellie     |     2      |            |            |            |            |            |            |
+|      2     |   Joe      |     1      |            |            |            |            |            |            |
+|      3     |   Ginger   |     2      |            |            |            |            |            |            |
+|      4     |   Tiger    |     3      |            |            |            |            |            |            |
+|      5     | Miss Kitty |     3      |            |            |            |            |            |            |
+|      6     |   Toby     |     4      |            |            |            |            |            |            |
+|      7     |  Bubble    |     5      |            |            |            |            |            |            |
 
-Table Name:
 
-|            |            |            |            |            |            |            |            |            |
+Table Name: Pet Type
+
+|  Pet Type  |            |            |            |            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
+|     1      |   Horse    |            |            |            |            |            |            |            |
+|     2      |   Dog      |            |            |            |            |            |            |            |
+|     3      |   Cat      |            |            |            |            |            |            |            |
+|     4      |   Turtle   |            |            |            |            |            |            |            |
+|     5      |   Fish     |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+
+
+
 
 ---
 
