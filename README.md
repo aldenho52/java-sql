@@ -165,6 +165,11 @@ GROUP BY c.company_name
   </details>
 
 ```SQL
+SELECT c.contact_name, COUNT(o.customer_id)
+FROM customers c LEFT JOIN orders o
+ON o.customer_id = c.customer_id
+GROUP BY c.contact_name
+ORDER BY COUNT DESC
 
 ```
 
@@ -176,7 +181,10 @@ GROUP BY c.company_name
   </details>
 
 ```SQL
-
+SELECT c.city, COUNT(o.customer_id)
+FROM customers c LEFT JOIN orders o
+ON o.customer_id = c.customer_id
+GROUP BY c.city
 ```
 
 ## Data Normalization
