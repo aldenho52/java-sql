@@ -206,11 +206,11 @@ Below are some empty tables to be used to normalize the database
 
 Table Name: Person Table
 
-| Person ID  |    Name    | Fenced Yard|City Dweller|            |            |            |            |            |
+| Person ID  |    Name    |            |            |            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|     1      |    Jane    |    No      |    Yes     |            |            |            |            |            |
-|     2      |     Bob    |    No      |     No     |            |            |            |            |            |
-|     3      |     Sam    |    Yes     |     No     |            |            |            |            |            |
+|     1      |    Jane    |            |            |            |            |            |            |            |
+|     2      |     Bob    |            |            |            |            |            |            |            |
+|     3      |     Sam    |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
 |            |            |            |            |            |            |            |            |            |
