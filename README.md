@@ -265,7 +265,13 @@ Table Name: Person Pet Table
 * [ ] ***delete all customers that have no orders. Should delete 2 (or 3 if you haven't deleted the record added) records***
 
 ```SQL
-
+DELETE
+FROM customers c
+WHERE NOT EXISTS(
+SELECT order_id
+FROM orders o
+WHERE o.customer_id = c.customer_id
+)
 ```
 
 * [ ] ***Create Database and Table: After creating the database, tables, columns, and constraint, generate the script necessary to recreate the database. This script is what you will submit for review***
